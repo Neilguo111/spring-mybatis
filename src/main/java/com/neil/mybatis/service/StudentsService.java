@@ -13,4 +13,12 @@ public interface StudentsService {
     Students selByName(String name);
 
     List<Students> findAll();
+
+    int insertStudent(int id,String nickname,int school_id,int class_id);
+
+    void addStudent(Students students);
+
+    String updateStudent(Students students);
+
+    int deleteStudent(int studentId);
 }

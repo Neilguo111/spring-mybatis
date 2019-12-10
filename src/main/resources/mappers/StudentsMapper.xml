@@ -13,7 +13,15 @@
         select * from students
     </select>
 
-    <insert id="insertStudent" parameterType="Students">
-        insert into students values(#{id},#{insertStudent},#{nickname},#{school_id})
+    <insert id="addStudents" parameterType="Students">
+        insert into students(id,nickname,class_id,school_id) values(#{id},#{nickname},#{class_id},#{school_id})
     </insert>
+
+    <update id="updateStudent" parameterType="Students">
+        update students set (nickname,class_id,school_id) values (#{nickname},#{class_id},#{school_id}) where id = #{id}
+    </update>
+
+    <delete id="deleteStudent" parameterType="INTEGER">
+        DELETE FROM students where id = #{id}
+    </delete>
 </mapper>
